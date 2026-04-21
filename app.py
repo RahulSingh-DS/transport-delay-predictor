@@ -4,11 +4,6 @@ import numpy as np
 import joblib
 import os
 
-# ─────────────────────────────────────────────
-# ABSOLUTE PATH FIX
-# Finds model/ folder relative to app.py itself,
-# no matter where you run streamlit from
-# ─────────────────────────────────────────────
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Check both root/model/ AND notebook/model/ automatically
@@ -129,9 +124,6 @@ if not model_loaded:
     Run your Jupyter notebook to generate them, then restart the app.
     """)
     st.stop()
-
-# Show where model was found
-st.markdown(f'<div class="info-box">✅ Model loaded from: <code>{MODEL_DIR}</code></div>', unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────
 # SIDEBAR
