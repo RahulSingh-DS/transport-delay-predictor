@@ -25,7 +25,7 @@ FEAT_PATH  = os.path.join(MODEL_DIR, "feature_columns.pkl")
 # PAGE CONFIG
 # ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="Transit Delay Predictor",
+    page_title="Transport Delay Predictor",
     page_icon="🚌",
     layout="wide",
     initial_sidebar_state="expanded"
