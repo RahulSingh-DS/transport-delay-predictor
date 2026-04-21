@@ -109,7 +109,7 @@ if model_loaded:
 # ─────────────────────────────────────────────
 st.markdown("""
 <div class="hero-card">
-    <p class="hero-title">🚌 Transit Delay Predictor</p>
+    <p class="hero-title">🚌 Transport Delay Predictor</p>
     <p class="hero-sub">Predict public transport delays using real-world weather, events & timetable data</p>
 </div>
 """, unsafe_allow_html=True)
