@@ -1,4 +1,4 @@
-# 🚌 Transit Delay Prediction
+# 🚌 Transport Delay Prediction
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://python.org)
 [![LightGBM](https://img.shields.io/badge/Model-LightGBM-orange)](https://lightgbm.readthedocs.io)
@@ -36,7 +36,7 @@ Public transport delays are influenced by multiple real-world factors — weathe
 ## 📁 Project Structure
 
 ```
-transit-delay-predictor/
+transport-delay-predictor/
 │
 ├── app.py                   # Streamlit web app
 ├── requirements.txt         # Dependencies
