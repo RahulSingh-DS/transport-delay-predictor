@@ -13,6 +13,8 @@
 
 🔗 *Add your Streamlit link here after deployment*
 
+![App Screenshot](assets/screenshot.png)
+
 ---
 
 ## 📌 Overview
