@@ -5,7 +5,7 @@
 [![Streamlit](https://img.shields.io/badge/App-Streamlit-red?logo=streamlit)](https://streamlit.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-> 🚍 A machine learning web app that predicts public transport delays using weather, time, and event data.
+> Predict public transport (bus & train) delays using weather, time, and event data — powered by LightGBM and deployed via Streamlit.
 
 ---
 
@@ -13,68 +13,117 @@
 
 🔗 *Add your Streamlit link here after deployment*
 
-![App Screenshot](assets/screenshot.png)
-
 ---
 
 ## 📌 Overview
 
-Public transport delays are influenced by multiple real-world factors such as weather, peak hours, and events.  
-This project builds an end-to-end ML system to **predict delay in minutes**, helping improve travel planning.
+Public transport delays are influenced by multiple real-world factors — weather, peak hours, nearby events, and route type. This project builds an **end-to-end ML pipeline** that predicts delay in minutes, helping commuters and transit planners make better decisions.
+
+---
+
+## 🔍 Key Features
+
+- Real-time delay prediction from user inputs
+- Interactive Streamlit UI with sidebar controls
+- Color-coded results (On Time / Minor Delay / Major Delay)
+- Feature importance visualization
+- Handles both Bus and Train vehicle types
 
 ---
 
 ## 📁 Project Structure
-transport-delay-predictor/
+
+```
+transit-delay-predictor/
 │
-├── app.py                  # Streamlit app
-├── requirements.txt        # Dependencies
+├── app.py                   # Streamlit web app
+├── requirements.txt         # Dependencies
 ├── README.md
 │
-├── model/                  # Trained artifacts
-│   ├── lgbm_model.pkl
-│   ├── label_encoders.pkl
-│   └── feature_columns.pkl
+├── notebook/
+│   ├── Public Transport Delay Prediction System.ipynb
+│   └── model/               # Trained artifacts
+│       ├── lgbm_model.pkl
+│       ├── label_encoders.pkl
+│       └── feature_columns.pkl
 │
-├── data/                   # Dataset
-│   └── dataset.csv
-│
-├── notebook/               # Jupyter notebooks
-│   └── *.ipynb
-│
-├── assets/                 # Images for README
-│   └── screenshot.png
+└── data/
+    └── dataset.csv          # Kaggle dataset
+```
+
 ---
 
-## 📊 DatasetSynthetic dataset inspired by real-world transport systems.**Includes:**- 🕐 Time (hour, weekday, month, peak hours)- 🌦 Weather (temperature, wind, visibility)- 📍 Context (events, route type, vehicle type)**Target:**- `delay_minutes` → delay in minutes---## ⚙️ Feature Engineering- Time-based features (hour, weekday, month)- Peak hour & weekend indicators- Label encoding for categorical features- Feature alignment for model consistency---## 🧠 Model- **Algorithm:** LightGBM Regressor  - **Objective:** Predict delay in minutes  - **Split:** 80/20  - **Early Stopping:** 50 rounds  **Metrics:**- MAE  - RMSE  - R²  ---## 🚀 Run Locally```bashgit clone https://github.com/RahulSingh-DS/transit-delay-predictor.gitcd transit-delay-predictorpip install -r requirements.txtstreamlit run app.py
+## 📊 Dataset
 
-🌐 Deployment
-Deploy using Streamlit Cloud:
+Synthetic dataset inspired by real-world public transport systems.
 
+| Feature | Description |
+|---|---|
+| `hour`, `day_of_week`, `month` | Time-based features |
+| `temperature`, `wind_speed`, `visibility` | Weather conditions |
+| `weather_condition` | Clear / Rain / Fog / Snow / Windy |
+| `vehicle_type` | Bus or Train |
+| `route_type` | Urban / Suburban / Rural |
+| `is_event_nearby` | Binary flag for nearby events |
+| `delay_minutes` | **Target** — delay in minutes |
 
-Push repo to GitHub
+---
 
-Connect repo on Streamlit Cloud
+## ⚙️ Feature Engineering
 
-Select app.py
+- Peak hour indicator (7–9 AM, 5–7 PM)
+- Weekend flag
+- Label encoding for categorical features
+- Feature alignment for consistent model input
 
-Deploy
+---
 
+## 🧠 Model
 
-🛠 Tech Stack
+| Detail | Value |
+|---|---|
+| Algorithm | LightGBM Regressor |
+| Train / Test Split | 80% / 20% |
+| Early Stopping | 50 rounds |
+| Key Hyperparameters | `n_estimators=500`, `lr=0.05`, `num_leaves=63` |
 
-Python, Pandas, NumPy
+**Evaluation Metrics:** MAE · RMSE · R²
 
-LightGBM, Scikit-learn
+---
 
-Streamlit
+## 🚀 Run Locally
 
+```bash
+git clone https://github.com/RahulSingh-DS/transit-delay-predictor.git
+cd transit-delay-predictor
+pip install -r requirements.txt
+streamlit run app.py
+```
 
+---
 
-👤 Author
-Rahul Singh
-🔗 https://github.com/RahulSingh-DS
+## 🌐 Deploy on Streamlit Cloud
 
-📄 License
+1. Push repo to GitHub
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Connect your repo → select `app.py` → Deploy
+
+---
+
+## 🛠 Tech Stack
+
+Python · Pandas · NumPy · LightGBM · Scikit-learn · Streamlit
+
+---
+
+## 👤 Author
+
+**Rahul Singh**
+- 💻 [GitHub](https://github.com/RahulSingh-DS)
+- 🔗 [LinkedIn](https://linkedin.com/in/pyrahul)
+
+---
+
+## 📄 License
+
 MIT License
----# 🔥 What Changed (Important)- Fixed folder structure ✅  - Removed wrong `dataset.csv` placement ❌  - Cleaned explanation (no unnecessary text)  - Made it **skimmable (recruiter-friendly)**  - Aligned with your actual project  ---# 🚀 Optional Upgrade (HIGH IMPACT)Add this section after overview:```md## 🔍 Key Features- Real-time delay prediction  - Interactive Streamlit UI  - Feature importance visualization  - End-to-end ML pipeline  
