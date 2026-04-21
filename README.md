@@ -11,7 +11,7 @@
 
 ## 🎯 Live Demo
 
-🔗 *Add your Streamlit link here after deployment*
+🔗 [https://transport-delay-predictor-rahulsingh.streamlit.app]
 
 ![App Screenshot](assets/screenshot.png)
 
